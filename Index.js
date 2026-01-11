@@ -34,7 +34,7 @@ io.on('connection', (socket) => {
     const room = rooms.get(roomId);
     room.users.add(socket.id);
     
-    console.log(`User ${socket.id} joined room ${roomId}`);
+    console.log(`User ${socket.id} joined room : ${roomId}`);
     
     // Send current user count to all users in room
     io.to(roomId).emit('user-count', room.users.size);
